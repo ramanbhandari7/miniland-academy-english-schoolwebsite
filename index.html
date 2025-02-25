@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miniland Academy - Demo Site</title>
+    <title>Miniland Academy - Image Showcase</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
             margin: 0;
-            background: url('images/hero.jpeg') no-repeat center center fixed;
+            background: url('Assets/hero.jpeg') no-repeat center center fixed;
             background-size: cover;
             color: white;
         }
@@ -19,7 +18,6 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             max-width: 600px;
             margin: auto;
         }
@@ -28,47 +26,62 @@
             color: #ffcc00;
         }
 
-        p {
-            font-size: 18px;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: white;
-            background: #007bff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 18px;
-        }
-
-        a:hover {
-            background: #0056b3;
-        }
-
-        /* Running Marquee */
-        .running-tag {
-            background-color: #ffcc00;
-            color: black;
-            padding: 15px;
-            font-size: 20px;
-            font-weight: bold;
-            white-space: nowrap;
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
             overflow: hidden;
-            box-sizing: border-box;
-            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        .running-tag span {
+        .slides {
+            display: none;
+            width: 100%;
+        }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .next { right: 0; }
+        .prev { left: 0; }
+
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Dots for Navigation */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
             display: inline-block;
-            padding-left: 100%;
-            animation: marquee 10s linear infinite;
         }
 
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        .active, .dot:hover {
+            background-color: #ffcc00;
         }
 
         /* Footer */
@@ -83,21 +96,68 @@
 </head>
 <body>
 
-    <div class="running-tag">
-        <span>🚀 Welcome to Miniland Academy English School! Our official DEMO website is now live! 🎉 This is just a test of the domain setup—our fully functional website is under development. Stay tuned for updates! 🚀</span>
-    </div>
-
     <div class="container">
-        <h1>Miniland Academy - Demo Website</h1>
-        <p>Our official <strong>DEMO website</strong> is now live! 🎉</p>
-        <p><strong>This is just a test</strong> of the domain setup—our fully functional website is under development.</p>
-        <p>Stay tuned for updates!</p>
-        <a href="https://minilandacademy.edu.np/demo/" target="_blank">Visit Demo</a>
+        <h1>Miniland Academy - Image Showcase</h1>
+        
+        <div class="slideshow-container">
+            <img class="slides" src="Assets/img (1).jpeg" alt="Image 1">
+            <img class="slides" src="Assets/img (2).jpeg" alt="Image 2">
+            <img class="slides" src="Assets/img (3).jpeg" alt="Image 3">
+            <img class="slides" src="Assets/img (4).jpeg" alt="Image 4">
+
+            <!-- Navigation Buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <!-- Dots for Slide Navigation -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
     </div>
 
     <div class="footer">
         &copy; 2025 Miniland Academy | Developed by <a href="https://ramanbhandari.com.np" target="_blank" style="color: #ffcc00;">Raman Bhandari</a>
     </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            
+            slides[slideIndex - 1].style.display = "block";
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            dots[slideIndex - 1].classList.add("active");
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+    </script>
 
 </body>
 </html>
