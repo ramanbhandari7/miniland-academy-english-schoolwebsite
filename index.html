@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miniland Academy - Demo Website</title>
   <style>
-    /* Set hero image as full background with dim effect */
+    /* Hero Background */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background: 
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
         url('Assets/hero.jpeg') no-repeat center center fixed;
       background-size: cover;
       color: white;
@@ -19,7 +19,7 @@
 
     /* Running Notice */
     .running-header {
-      background-color: rgba(255, 204, 0, 0.9);
+      background-color: rgba(255, 204, 0, 0.8);
       color: black;
       padding: 12px 0;
       font-size: 16px;
@@ -40,7 +40,7 @@
     }
 
     .running-header:hover span {
-      animation-play-state: paused; /* Stop animation on hover */
+      animation-play-state: paused; /* Stops on hover */
     }
 
     @keyframes marquee {
@@ -48,9 +48,9 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Main content container */
+    /* Transparent Content Box */
     .container {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.5); /* Transparent effect */
       padding: 20px;
       border-radius: 10px;
       max-width: 90%;
@@ -77,11 +77,11 @@
       object-fit: cover;
     }
 
-    /* Responsive Map */
+    /* Responsive Google Map */
     .map-container {
       position: relative;
       overflow: hidden;
-      padding-top: 56.25%; /* 16:9 aspect ratio */
+      padding-top: 56.25%;
     }
 
     .map-container iframe {
@@ -97,7 +97,7 @@
     .contact {
       margin: 20px auto;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.5); /* Transparent effect */
       font-size: 14px;
       border-radius: 10px;
       max-width: 90%;
@@ -113,7 +113,7 @@
     .footer {
       margin: 10px auto;
       padding: 15px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.5); /* Transparent effect */
       font-size: 14px;
       max-width: 90%;
       border-radius: 10px;
