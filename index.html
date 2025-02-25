@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miniland Academy - Demo Website</title>
+    <link rel="icon" type="image/png" href="Assets/favicon.png"> <!-- Favicon -->
+    
     <style>
         /* Hero Background */
         body {
@@ -17,6 +19,15 @@
             color: white;
         }
 
+        /* LOGO at Top Left */
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 120px; /* Adjust size as needed */
+            height: auto;
+        }
+
         /* Running Notice */
         .running-header {
             background-color: rgba(255, 204, 0, 0.8);
@@ -26,6 +37,7 @@
             font-weight: bold;
             overflow: hidden;
             white-space: nowrap;
+            margin-top: 60px;
         }
 
         .running-header span {
@@ -56,10 +68,11 @@
             color: #ffcc00;
         }
 
-        /* Slideshow */
+        /* Slideshow (Bigger) */
         .slideshow-container {
             position: relative;
-            max-width: 100%;
+            max-width: 90%;
+            height: 500px; /* Increased size */
             margin: auto;
             overflow: hidden;
             border-radius: 10px;
@@ -68,15 +81,15 @@
         .slides {
             display: none;
             width: 100%;
-            max-height: 400px;
+            height: 100%;
             object-fit: cover;
         }
 
-        /* Responsive Google Map */
+        /* Responsive Google Map (Satellite View) */
         .map-container {
             position: relative;
             overflow: hidden;
-            padding-top: 56.25%;
+            padding-top: 35%; /* Adjusted to 35% height */
         }
 
         .map-container iframe {
@@ -126,13 +139,24 @@
                 max-width: 95%;
             }
             
-            .slides {
-                max-height: 300px;
+            .slideshow-container {
+                height: 300px; /* Adjust for mobile */
+            }
+
+            .map-container {
+                padding-top: 50%; /* Adjust map height on smaller screens */
+            }
+
+            .logo {
+                width: 90px; /* Adjust logo size for mobile */
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- LOGO -->
+    <img src="Assets/logo.jpg" alt="Miniland Academy Logo" class="logo">
 
     <!-- Running Header -->
     <div class="running-header">
@@ -143,7 +167,7 @@
     <div class="container">
         <h1>Miniland Academy - Demo Website</h1>
 
-        <!-- Image Slideshow -->
+        <!-- Image Slideshow (Bigger) -->
         <div class="slideshow-container">
             <img class="slides" src="Assets/img (1).jpeg" alt="School Image 1">
             <img class="slides" src="Assets/img (2).jpeg" alt="School Image 2">
@@ -151,10 +175,10 @@
             <img class="slides" src="Assets/img (4).jpeg" alt="School Image 4">
         </div>
 
-        <!-- Responsive Map -->
+        <!-- Responsive Map (Satellite View) -->
         <h2>📍 Find Us on the Map</h2>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa!4v1740477193555!5m2!1sen!2sqa" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa&output=embed&t=s" allowfullscreen loading="lazy"></iframe>
         </div>
     </div>
 
@@ -174,7 +198,7 @@
     </div>
 
     <script>
-        // Slideshow
+        // Slideshow (Bigger)
         let slideIndex = 0;
         function showSlides() {
             let slides = document.querySelectorAll(".slides");
@@ -185,16 +209,6 @@
             setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
         showSlides();
-
-        // Stop marquee on hover/touch
-        const marqueeText = document.querySelector(".running-header span");
-        marqueeText.addEventListener("mouseenter", () => {
-            marqueeText.style.animationPlayState = "paused";
-        });
-
-        marqueeText.addEventListener("mouseleave", () => {
-            marqueeText.style.animationPlayState = "running";
-        });
     </script>
 
 </body>
