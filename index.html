@@ -1,234 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miniland Academy - Demo Website</title>
-    <link rel="icon" type="image/png" href="Assets/favicon.png"> <!-- Favicon -->
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 
-    <style>
-        /* Hero Background */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            text-align: center;
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('Assets/hero.jpeg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-        }
-
-        /* Header with Logo */
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .logo {
-            width: 80px; /* Adjust logo size */
-            margin-right: 10px;
-        }
-
-        /* Running Notice */
-        .running-header {
-            background-color: rgba(255, 204, 0, 0.8);
-            color: black;
-            padding: 12px 0;
-            font-size: 16px;
-            font-weight: bold;
-            overflow: hidden;
-            white-space: nowrap;
-            margin-top: 10px;
-        }
-
-        .running-header span {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 20s linear infinite;
-        }
-
-        .running-header:hover span {
-            animation-play-state: paused; /* Stops on hover */
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* Content Box */
-        .container {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 90%;
-            margin: 20px auto;
-        }
-
-        h1, h2 {
-            color: #ffcc00;
-        }
-
-        /* Slideshow (Expanded Height) */
-        .slideshow-container {
-            position: relative;
-            max-width: 90%;
-            height: 600px; /* Increased height */
-            margin: auto;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .slides {
-            display: none;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Google Map (Smaller Size) */
-        .map-container {
-            position: relative;
-            overflow: hidden;
-            width: 400px; /* Adjust width */
-            height: 250px; /* Adjust height */
-            margin: auto;
-            border-radius: 10px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Contact Section */
-        .contact {
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 14px;
-            border-radius: 10px;
-            max-width: 90%;
-        }
-
-        .contact a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        .footer {
-            margin: 10px auto;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 14px;
-            max-width: 90%;
-            border-radius: 10px;
-        }
-
-        .footer a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Mobile Optimization */
-        @media screen and (max-width: 768px) {
-            .container, .contact, .footer {
-                max-width: 95%;
-            }
-            
-            .slideshow-container {
-                height: 350px; /* Adjust for mobile */
-            }
-
-            .map-container {
-                width: 100%; /* Full width on mobile */
-                height: 300px; /* Increase height on small screens */
-            }
-
-            .logo {
-                width: 60px; /* Adjust logo size for mobile */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header with Logo -->
-    <div class="header">
-        <img src="Assets/logo.jpeg" alt="Miniland Academy Logo" class="logo">
-        <h1>Miniland Academy</h1>
-    </div>
-
-    <!-- Running Header -->
-    <div class="running-header">
-        <span>🚀 Our official DEMO website is now live! 🎉 This is just a test of the domain setup—our fully functional website is under development. Stay tuned for updates! 🚀</span>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container">
-        <h2>Explore Our School</h2>
-
-        <!-- Image Slideshow (Expanded Height) -->
-        <div class="slideshow-container">
-            <img class="slides" src="Assets/img (1).jpeg" alt="School Image 1">
-            <img class="slides" src="Assets/img (2).jpeg" alt="School Image 2">
-            <img class="slides" src="Assets/img (3).jpeg" alt="School Image 3">
-            <img class="slides" src="Assets/img (4).jpeg" alt="School Image 4">
-        </div>
-
-        <!-- Responsive Map (Smaller Size) -->
-        <h2>📍 Find Us on the Map</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
     <!-- Satellite View (Default) -->
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa&t=k" 
-        width="400" height="250" style="border:0;" allowfullscreen loading="lazy">
-    </iframe>
+    <div>
+        <h3>📍 Satellite View</h3>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa&t=k" 
+            width="400" height="250" style="border:0;" allowfullscreen loading="lazy">
+        </iframe>
+    </div>
 
     <!-- Road Map View -->
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa" 
-        width="400" height="250" style="border:0;" allowfullscreen loading="lazy">
-    </iframe>
+    <div>
+        <h3>📍 Road Map View</h3>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa" 
+            width="400" height="250" style="border:0;" allowfullscreen loading="lazy">
+        </iframe>
+    </div>
 </div>
 
-    </div>
-
-    <!-- Contact Section -->
-    <div class="contact">
-        <h2>📍 Contact Miniland Academy</h2>
-        <p>For admissions, inquiries, or urgent school visits, reach out to us:</p>
-        <p><strong>📍 Address:</strong> Q94H+4G3, Dharan - Kerabari Rd, Kerabari 56600, Nepal</p>
-        <p><strong>📞 Phone:</strong> +977 9826355288</p>
-        <p><strong>✉️ Email:</strong> <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></p>
-        <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/977986302747" target="_blank">Chat Now</a></p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        &copy; 2025 Miniland Academy | Developed by <a href="https://ramanbhandari.com.np" target="_blank">Raman Bhandari</a>
-    </div>
-
-    <script>
-        // Slideshow (Expanded Height)
-        let slideIndex = 0;
-        function showSlides() {
-            let slides = document.querySelectorAll(".slides");
-            slides.forEach(slide => slide.style.display = "none");
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
-        showSlides();
-    </script>
-
-</body>
-</html>
+<!-- Latest YouTube Video Embed -->
+<div style="text-align: center; margin-top: 20px;">
+    <h3>🎥 Latest Video from Miniland Academy</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/nFGuXu9QFYk?si=bD4WvXr_upnppx8P" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+    <p>
+        <a href="https://youtube.com/@minilandacademy?si=dHhYvafu-2mBt2Cg" target="_blank">📺 Watch More on YouTube</a>
+    </p>
+</div>
