@@ -10,23 +10,28 @@
             text-align: center;
             padding: 50px;
             margin: 0;
-            background: url('background.jpg') no-repeat center center/cover; /* Change 'background.jpg' to your image URL */
+            background: url('images/hero.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
         }
+
         .container {
-            background: rgba(255, 255, 255, 0.8); /* Slight transparency for readability */
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             max-width: 600px;
             margin: auto;
         }
+
         h1 {
-            color: #007bff;
+            color: #ffcc00;
         }
+
         p {
             font-size: 18px;
-            color: #333;
         }
+
         a {
             display: inline-block;
             margin-top: 20px;
@@ -35,17 +40,19 @@
             background: #007bff;
             padding: 10px 20px;
             border-radius: 5px;
+            font-size: 18px;
         }
+
         a:hover {
             background: #0056b3;
         }
 
-        /* Big Running Tag */
+        /* Running Marquee */
         .running-tag {
-            background-color: #007bff;
-            color: white;
+            background-color: #ffcc00;
+            color: black;
             padding: 15px;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             white-space: nowrap;
             overflow: hidden;
@@ -55,32 +62,42 @@
 
         .running-tag span {
             display: inline-block;
-            padding-left: 100%; /* Start off-screen */
-            animation: marquee 15s linear infinite;
+            padding-left: 100%;
+            animation: marquee 10s linear infinite;
         }
 
         @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
+
+    <div class="running-tag">
+        <span>🚀 Welcome to Miniland Academy English School! Our official DEMO website is now live! 🎉 This is just a test of the domain setup—our fully functional website is under development. Stay tuned for updates! 🚀</span>
+    </div>
+
     <div class="container">
         <h1>Miniland Academy - Demo Website</h1>
         <p>Our official <strong>DEMO website</strong> is now live! 🎉</p>
         <p><strong>This is just a test</strong> of the domain setup—our fully functional website is under development.</p>
         <p>Stay tuned for updates!</p>
-        <a href="https://minilandacademy.edu.np">Visit Demo</a>
+        <a href="https://minilandacademy.edu.np/demo/" target="_blank">Visit Demo</a>
     </div>
 
-    <!-- Big Running Tag -->
-    <div class="running-tag">
-        <span>🚀 Welcome to Miniland Academy English School! 🚀</span>
+    <div class="footer">
+        &copy; 2025 Miniland Academy | Developed by <a href="https://ramanbhandari.com.np" target="_blank" style="color: #ffcc00;">Raman Bhandari</a>
     </div>
+
 </body>
 </html>
