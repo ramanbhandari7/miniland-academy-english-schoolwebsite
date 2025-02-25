@@ -1,418 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miniland Academy English School</title>
-  <link rel="icon" href="document/favicon.ico" type="image/x-icon"> <!-- Favicon -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #ffffff; /* White */
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniland Academy - Demo Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            background: url('background.jpg') no-repeat center center/cover; /* Change 'background.jpg' to your image URL */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Slight transparency for readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: #0056b3;
+        }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+        /* Scrolling Text */
+        .scrolling-text {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            margin: 20px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
 
-    /* Header Section */
-    header {
-      background-color: #8B0000; /* Soft Maroon */
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: slowScroll 20s linear infinite;
+        }
 
-    header .logo {
-      width: 150px;
-      margin-bottom: 10px;
-    }
+        @keyframes slowScroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Slogan with Typewriter Effect */
-    .slogan {
-      font-size: 1.2em;
-      font-weight: 600;
-      color: #333;
-      margin-top: 10px;
-      text-align: center;
-      overflow: hidden; /* Ensures the text is hidden until it's typed */
-      white-space: nowrap; /* Keeps the text on a single line */
-      border-right: 0.15em solid #333; /* Creates the blinking cursor effect */
-      animation: blink-caret 0.75s step-end infinite;
-    }
-
-    /* Blinking cursor animation */
-    @keyframes blink-caret {
-      from, to {
-        border-color: transparent;
-      }
-      50% {
-        border-color: #333;
-      }
-    }
-
-    /* Main Image with Enroll Now Button */
-    .main-image {
-      position: relative;
-      width: 100%;
-    }
-
-    .main-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .enroll-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 15px 30px;
-      background-color: rgba(255, 223, 0, 0.8); /* Soft Yellow with transparency */
-      color: #8B0000; /* Soft Maroon */
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 5px;
-      border: 2px solid white; /* White border */
-      transition: background-color 0.3s ease;
-    }
-
-    .enroll-btn:hover {
-      background-color: rgba(255, 223, 0, 0.9); /* Darker Soft Yellow with transparency */
-    }
-
-    /* Sections */
-    .section {
-      padding: 40px 0;
-    }
-
-    .section h2 {
-      color: #0077b6; /* Ocean Blue */
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .section p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      text-align: center;
-    }
-
-    /* Programs Section */
-    #programs ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-
-    #programs ul li {
-      font-size: 1.1rem;
-      margin: 10px 0;
-    }
-
-    /* Gallery Section */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Contact Section */
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: space-between;
-    }
-
-    .contact-info,
-    .contact-form {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .contact-info h3,
-    .contact-form h3 {
-      color: #0077b6; /* Ocean Blue */
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
-
-    .contact-info p {
-      margin: 10px 0;
-      line-height: 1.8;
-    }
-
-    .contact-info a {
-      color: #0077b6; /* Ocean Blue */
-      text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-form {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .contact-form .form-group {
-      margin-bottom: 20px; /* Increased spacing */
-    }
-
-    .contact-form label {
-      display: block;
-      margin-bottom: 8px; /* Increased spacing */
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px; /* Increased padding */
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      box-sizing: border-box;
-      max-width: 100%;
-    }
-
-    .contact-form textarea {
-      resize: vertical;
-      min-height: 150px;
-    }
-
-    .contact-form button {
-      background-color: #0077b6; /* Ocean Blue */
-      color: white;
-      padding: 12px 24px; /* Increased padding */
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    .contact-form button:hover {
-      background-color: #023e8a; /* Darker Ocean Blue */
-    }
-
-    /* Footer */
-    footer {
-      background-color: #8B0000; /* Soft Maroon */
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 0.9rem;
-    }
-
-    footer .developer-credit {
-      margin-top: 10px;
-      font-size: 0.8rem;
-    }
-
-    footer .developer-credit a {
-      color: #FFDF00; /* Soft Yellow */
-      text-decoration: none;
-    }
-
-    footer .developer-credit a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .enroll-btn {
-        padding: 12px 25px;
-        font-size: 16px;
-      }
-
-      .contact-container {
-        flex-direction: column;
-      }
-
-      .gallery img {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      .enroll-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
-
-      .section h2 {
-        font-size: 1.75rem;
-      }
-
-      .section p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="container">
-      <img src="Document/logo.jpg.JPG" alt="Miniland Academy Logo" class="logo">
-      <h1>Welcome to Miniland Academy English School</h1>
-      <p id="slogan" class="slogan"></p>
-      <nav>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+
+    <!-- Scrolling Text -->
+    <div class="scrolling-text">
+        <span>🚀 Welcome to Miniland Academy! | Our official DEMO website is now live! 🎉 | This is just a test of the domain setup—our fully functional website is under development. | Stay tuned for updates! 🚀</span>
     </div>
-  </header>
 
-  <!-- Main Image with Enroll Now Button -->
-  <section class="main-image">
-    <img src="Document/school.jpg.JPG" alt="Miniland Academy English School">
-    <a href="#contact" class="enroll-btn">Enroll Now</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section">
     <div class="container">
-      <h2>About Us</h2>
-      <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, Nepal, is dedicated to providing high-quality education in a nurturing and supportive environment. We are committed to fostering academic excellence, personal character development, and the holistic growth of our students, equipping them with the skills and confidence to face the challenges of the future.</p>
-      <p>मिनील्यान्ड एकेडेमी अंग्रेजी स्कूल, मोरङ जिल्लाको केराबारी ७, डाँगीमा अवस्थित छ। हामी गुणस्तरीय शिक्षा प्रदान गर्न र विद्यार्थीहरूको शैक्षिक उत्कृष्टता, व्यक्तिगत चरित्र विकास, र समग्र वृद्धिमा ध्यान केन्द्रित गर्दछौं। हाम्रो लक्ष्य विद्यार्थीहरूलाई भविष्यका चुनौतीहरू सामना गर्न तयार पार्नु हो।</p>
+        <h1>Miniland Academy - Demo Website</h1>
+        <p>Our official <strong>DEMO website</strong> is now live! 🎉</p>
+        <p><strong>This is just a test</strong> of the domain setup—our fully functional website is under development.</p>
+        <p>Stay tuned for updates!</p>
+        <a href="https://minilandacademy.edu.np">Visit Demo</a>
     </div>
-  </section>
 
-  <!-- Programs Section -->
-  <section id="programs" class="section">
-    <div class="container">
-      <h2>Our Programs</h2>
-      <ul>
-        <li>Early Childhood Education: Kindergarten</li>
-        <li>Primary and Pre-Secondary Education</li>
-        <li>Computer Lab & Science Practical Classes</li>
-        <li>Extracurricular Activities (Sports, Arts, and Music)</li>
-      </ul>
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 All Rights Reserved at Miniland Academy | Developed by 
+        <a href="https://ramanbhandari.com.np" target="_blank">Raman Bhandari</a>
     </div>
-  </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="Document/school1.jpg" alt="School Building">
-        <img src="Document/school2.jpg" alt="Classroom">
-        <img src="Document/school3.jpg" alt="Sports Day">
-        <img src="Document/annual1.JPG" alt="16th Annual Ceremony Celebration">
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p><strong>Address:</strong></p>
-          <p>Miniland Academy English School<br>
-          Q94H+463, Dharan - Kerabari Rd<br>
-          Kerabari 56600, Nepal</p>
-          <p><strong>Phone:</strong></p>
-          <p>Mobile: <a href="tel:+9779826355288">+977 9826355288</a></p>
-          <p><strong>Email:</strong></p>
-          <p><a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></p>
-          <p><strong>Office Hours:</strong></p>
-          <p>Sunday - Thursday: 10:00 AM - 4:00 PM<br>
-          Friday: 10:00 AM - 1:00 PM<br>
-          Saturday: Off</p>
-        </div>
-
-        <div class="contact-form">
-          <h3>Send us a Message</h3>
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Your email" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-             
+</body>
+</html>
