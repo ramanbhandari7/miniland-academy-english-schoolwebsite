@@ -19,25 +19,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: auto;
-            opacity: 0;
-            animation: fadeIn 3s ease-in-out forwards;
         }
-
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Slow text reveal */
-        .slow-text {
-            opacity: 0;
-            animation: fadeIn 3s ease-in-out forwards;
-        }
-        .slow-text:nth-child(1) { animation-delay: 1s; }
-        .slow-text:nth-child(2) { animation-delay: 3s; }
-        .slow-text:nth-child(3) { animation-delay: 5s; }
-
         h1 {
             color: #007bff;
         }
@@ -53,34 +35,35 @@
             background: #007bff;
             padding: 10px 20px;
             border-radius: 5px;
-            opacity: 0;
-            animation: fadeIn 3s ease-in-out forwards;
-            animation-delay: 7s;
         }
         a:hover {
             background: #0056b3;
         }
 
-        /* Big Running Tag */
-        .running-tag {
+        /* Scrolling Text */
+        .scrolling-text {
             background-color: #007bff;
             color: white;
             padding: 15px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             white-space: nowrap;
             overflow: hidden;
             box-sizing: border-box;
             margin: 20px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
 
-        .running-tag span {
+        .scrolling-text span {
             display: inline-block;
-            padding-left: 100%; /* Start off-screen */
-            animation: marquee 15s linear infinite;
+            padding-left: 100%;
+            animation: slowScroll 20s linear infinite;
         }
 
-        @keyframes marquee {
+        @keyframes slowScroll {
             0% {
                 transform: translateX(100%);
             }
@@ -108,16 +91,18 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="slow-text">Our official DEMO website is now live! 🎉</h1>
-        <p class="slow-text">This is just a test of the domain setup—our fully functional website is under development.</p>
-        <p class="slow-text">Stay tuned for updates!</p>
-        <a href="https://minilandacademy.edu.np">Visit Demo</a>
+
+    <!-- Scrolling Text -->
+    <div class="scrolling-text">
+        <span>🚀 Welcome to Miniland Academy! | Our official DEMO website is now live! 🎉 | This is just a test of the domain setup—our fully functional website is under development. | Stay tuned for updates! 🚀</span>
     </div>
 
-    <!-- Big Running Tag -->
-    <div class="running-tag">
-        <span>🚀 Welcome to Miniland Academy English School! 🚀</span>
+    <div class="container">
+        <h1>Miniland Academy - Demo Website</h1>
+        <p>Our official <strong>DEMO website</strong> is now live! 🎉</p>
+        <p><strong>This is just a test</strong> of the domain setup—our fully functional website is under development.</p>
+        <p>Stay tuned for updates!</p>
+        <a href="https://minilandacademy.edu.np">Visit Demo</a>
     </div>
 
     <!-- Footer -->
@@ -125,5 +110,6 @@
         © 2025 All Rights Reserved at Miniland Academy | Developed by 
         <a href="https://ramanbhandari.com.np" target="_blank">Raman Bhandari</a>
     </div>
+
 </body>
 </html>
