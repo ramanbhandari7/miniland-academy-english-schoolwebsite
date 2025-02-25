@@ -1,32 +1,183 @@
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniland Academy - Demo</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: url('assets/hero.jpeg') no-repeat center center/cover;
+            color: white;
+            position: relative;
+        }
+        
+        /* Background Overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dim Effect */
+            z-index: -1;
+        }
 
-    <!-- Satellite View (Default) -->
-    <div>
-        <h3>📍 Satellite View</h3>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa&t=k" 
-            width="400" height="250" style="border:0;" allowfullscreen loading="lazy">
-        </iframe>
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        .header h1 {
+            font-size: 30px;
+            margin: 0;
+        }
+
+        /* Running Notice */
+        .running-tag {
+            background: rgba(0, 123, 255, 0.8);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .running-tag span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 12s linear infinite;
+        }
+
+        .running-tag:hover span {
+            animation-play-state: paused; /* Stops on Hover */
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Map Section */
+        .map-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .map-container iframe {
+            width: 400px;
+            height: 250px;
+            border-radius: 10px;
+        }
+
+        /* Image Showcase */
+        .image-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .image-showcase img {
+            width: 45%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Logo -->
+    <div class="header">
+        <img src="assets/logo.jpeg" alt="Miniland Academy Logo">
+        <h1>Miniland Academy</h1>
     </div>
 
-    <!-- Road Map View -->
-    <div>
-        <h3>📍 Road Map View</h3>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa" 
-            width="400" height="250" style="border:0;" allowfullscreen loading="lazy">
-        </iframe>
+    <!-- Running Notice -->
+    <div class="running-tag">
+        <span>🚀 Our official DEMO website is now live! 🎉 This is just a test of the domain setup—our fully functional website is under development. Stay tuned for updates! 🚀</span>
     </div>
-</div>
 
-<!-- Latest YouTube Video Embed -->
-<div style="text-align: center; margin-top: 20px;">
-    <h3>🎥 Latest Video from Miniland Academy</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/nFGuXu9QFYk?si=bD4WvXr_upnppx8P" 
-        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-    <p>
-        <a href="https://youtube.com/@minilandacademy?si=dHhYvafu-2mBt2Cg" target="_blank">📺 Watch More on YouTube</a>
-    </p>
-</div>
+    <!-- Content Container -->
+    <div class="container">
+        <h2>Welcome to Miniland Academy</h2>
+        <p>We are working on a fully functional website! This is just a demo to test our domain and online presence.</p>
+        <p>For inquiries or admissions, reach out to us:</p>
+        <p>📍 Location: Q94H+4G3, Dharan - Kerabari Rd, Kerabari 56600, Nepal</p>
+        <p>📞 Contact: +977 9826355288</p>
+        <p>💬 WhatsApp: <a href="https://wa.me/977986302747" target="_blank">Click Here</a></p>
+    </div>
+
+    <!-- Dual Map Display -->
+    <div class="map-container">
+        <div>
+            <h3>📍 Satellite View</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa&t=k" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div>
+            <h3>📍 Road Map View</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <!-- Image Showcase -->
+    <div class="image-showcase">
+        <img src="assets/img1.jpeg" alt="School Image 1">
+        <img src="assets/img2.jpeg" alt="School Image 2">
+        <img src="assets/img3.jpeg" alt="School Image 3">
+        <img src="assets/img4.jpeg" alt="School Image 4">
+    </div>
+
+    <!-- Latest YouTube Video -->
+    <div>
+        <h3>🎥 Latest Video from Miniland Academy</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/nFGuXu9QFYk?si=bD4WvXr_upnppx8P" allowfullscreen></iframe>
+        <p><a href="https://youtube.com/@minilandacademy" target="_blank">📺 Watch More on YouTube</a></p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 Miniland Academy. All Rights Reserved | Developed by <a href="https://ramanbhadari.com.np" target="_blank">Raman Bhandari</a></p>
+    </div>
+
+</body>
+</html>
