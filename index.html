@@ -19,6 +19,51 @@
             color: white;
         }
 
+        /* Notice Popup */
+        .notice-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .notice-content {
+            position: relative;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 90%;
+            text-align: center;
+            width: 400px;
+        }
+
+        .notice-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
         /* Header with Logo */
         .header {
             display: flex;
@@ -59,99 +104,11 @@
             100% { transform: translateX(-100%); }
         }
 
-        /* Content Box */
-        .container {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 90%;
-            margin: 20px auto;
-        }
-
-        h1, h2 {
-            color: #ffcc00;
-        }
-
-        /* Slideshow (Expanded Height) */
-        .slideshow-container {
-            position: relative;
-            max-width: 90%;
-            height: 600px; /* Increased height */
-            margin: auto;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .slides {
-            display: none;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Google Map (Smaller Size) */
-        .map-container {
-            position: relative;
-            overflow: hidden;
-            width: 400px; /* Adjust width */
-            height: 250px; /* Adjust height */
-            margin: auto;
-            border-radius: 10px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Contact Section */
-        .contact {
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 14px;
-            border-radius: 10px;
-            max-width: 90%;
-        }
-
-        .contact a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        .footer {
-            margin: 10px auto;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 14px;
-            max-width: 90%;
-            border-radius: 10px;
-        }
-
-        .footer a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Mobile Optimization */
         @media screen and (max-width: 768px) {
-            .container, .contact, .footer {
-                max-width: 95%;
+            .notice-content {
+                width: 90%;
+                max-width: 350px;
             }
-            
-            .slideshow-container {
-                height: 350px; /* Adjust for mobile */
-            }
-
-            .map-container {
-                width: 100%; /* Full width on mobile */
-                height: 300px; /* Increase height on small screens */
-            }
-
             .logo {
                 width: 60px; /* Adjust logo size for mobile */
             }
@@ -159,7 +116,8 @@
     </style>
 </head>
 <body>
-   <!-- Notice Popup -->
+
+    <!-- Notice Popup -->
     <div class="notice-popup" id="noticePopup">
         <div class="notice-content">
             <button class="close-btn" onclick="closeNotice()">✖</button>
@@ -182,56 +140,6 @@
         function closeNotice() {
             document.getElementById("noticePopup").style.display = "none";
         }
-    </script>
-        <h2>Explore Our School</h2>
-
-        <!-- Image Slideshow -->
-        <div class="slideshow-container">
-            <img class="slides" src="Assets/img (1).jpeg" alt="School Image 1">
-            <img class="slides" src="Assets/img (2).jpeg" alt="School Image 2">
-            <img class="slides" src="Assets/img (3).jpeg" alt="School Image 3">
-            <img class="slides" src="Assets/img (4).jpeg" alt="School Image 4">
-            <img class="slides" src="Assets/img (5).jpeg" alt="School Image 5">
-        </div>
-
-        <!-- YouTube Video -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/nFGuXu9QFYk?si=cRGYs18rQKmdnFNw" allowfullscreen></iframe>
-        </div>
-        <!-- Responsive Map (Smaller Size) -->
-        <h2>📍 Find Us on the Map</h2>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa&output=embed&t=s" allowfullscreen loading="lazy"></iframe>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="contact">
-        <h2>📍 Contact Miniland Academy</h2>
-        <p>For admissions, inquiries, or urgent school visits, reach out to us:</p>
-        <p><strong>📍 Address:</strong> Q94H+4G3, Dharan - Kerabari Rd, Kerabari 56600, Nepal</p>
-        <p><strong>📞 Phone:</strong> +977 9826355288</p>
-        <p><strong>✉️ Email:</strong> <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></p>
-        <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/977986302747" target="_blank">Chat Now</a></p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        &copy; 2025 Miniland Academy | Developed by <a href="https://ramanbhandari.com.np" target="_blank">Raman Bhandari</a>
-    </div>
-
-    <script>
-        // Slideshow (Expanded Height)
-        let slideIndex = 0;
-        function showSlides() {
-            let slides = document.querySelectorAll(".slides");
-            slides.forEach(slide => slide.style.display = "none");
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
-        showSlides();
     </script>
 
 </body>
