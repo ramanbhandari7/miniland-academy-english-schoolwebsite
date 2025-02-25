@@ -159,6 +159,13 @@
     </style>
 </head>
 <body>
+   <!-- Notice Popup -->
+    <div class="notice-popup" id="noticePopup">
+        <div class="notice-content">
+            <button class="close-btn" onclick="closeNotice()">✖</button>
+            <img src="Assets/notice.jpeg" alt="Important Notice">
+        </div>
+    </div>
 
     <!-- Header with Logo -->
     <div class="header">
@@ -169,7 +176,13 @@
     <!-- Running Header -->
     <div class="running-header">
         <span>🚀 Our official DEMO website is now live! 🎉 This is just a test of the domain setup—our fully functional website is under development. Stay tuned for updates! 🚀</span>
-    <div class="container">
+    </div>
+
+    <script>
+        function closeNotice() {
+            document.getElementById("noticePopup").style.display = "none";
+        }
+    </script>
         <h2>Explore Our School</h2>
 
         <!-- Image Slideshow -->
@@ -179,7 +192,6 @@
             <img class="slides" src="Assets/img (3).jpeg" alt="School Image 3">
             <img class="slides" src="Assets/img (4).jpeg" alt="School Image 4">
             <img class="slides" src="Assets/img (5).jpeg" alt="School Image 5">
-            <img class="slides" src="Assets/notice.jpeg" alt="Notice Image">
         </div>
 
         <!-- YouTube Video -->
