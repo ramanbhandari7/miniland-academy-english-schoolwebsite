@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Miniland Academy - Demo Website</title>
   <style>
-    /* Set hero.jpeg as the main background with a dark overlay */
+    /* Set hero image as full background with dim effect */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -17,26 +17,26 @@
       text-align: center;
     }
 
-    /* Running Small Header */
+    /* Running Header */
     .running-header {
       background-color: rgba(255, 204, 0, 0.9);
       color: black;
-      padding: 10px 0;
+      padding: 12px 0;
       font-size: 16px;
       font-weight: bold;
-      white-space: nowrap;
       overflow: hidden;
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
+      white-space: nowrap;
     }
 
     .running-header span {
       display: inline-block;
       padding-left: 100%;
-      animation: marquee 18s linear infinite;
+      animation: marquee 20s linear infinite;
     }
 
     @keyframes marquee {
@@ -44,33 +44,33 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Main container for content with semi-transparent background for readability */
+    /* Main content container */
     .container {
       background: rgba(0, 0, 0, 0.7);
       padding: 20px;
       border-radius: 10px;
-      max-width: 600px;
-      margin: 100px auto 20px auto; /* adds margin at top to clear running header */
+      max-width: 90%;
+      margin: 80px auto 20px;
     }
 
     h1, h2 {
       color: #ffcc00;
     }
 
-    /* Slideshow Styles */
+    /* Slideshow */
     .slideshow-container {
       position: relative;
       max-width: 100%;
       margin: auto;
       overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     .slides {
       display: none;
       width: 100%;
-      transition: opacity 1s ease-in-out;
+      max-height: 400px;
+      object-fit: cover;
     }
 
     /* Navigation Buttons */
@@ -79,23 +79,21 @@
       position: absolute;
       top: 50%;
       padding: 10px;
-      margin-top: -22px;
       color: white;
       font-weight: bold;
       font-size: 18px;
-      transition: 0.3s;
-      border-radius: 5px;
       background: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
     }
 
-    .next { right: 0; }
-    .prev { left: 0; }
+    .next { right: 10px; }
+    .prev { left: 10px; }
 
     .prev:hover, .next:hover {
       background: rgba(0, 0, 0, 0.8);
     }
 
-    /* Dots for Navigation */
+    /* Dots for navigation */
     .dots {
       text-align: center;
       margin-top: 10px;
@@ -105,7 +103,7 @@
       cursor: pointer;
       height: 12px;
       width: 12px;
-      margin: 0 5px;
+      margin: 5px;
       background-color: #bbb;
       border-radius: 50%;
       display: inline-block;
@@ -115,14 +113,14 @@
       background-color: #ffcc00;
     }
 
-    /* Contact & Location Section */
+    /* Contact Section */
     .contact {
       margin: 20px auto;
       padding: 20px;
       background: rgba(0, 0, 0, 0.8);
       font-size: 14px;
       border-radius: 10px;
-      max-width: 600px;
+      max-width: 90%;
     }
 
     .contact a {
@@ -133,11 +131,11 @@
 
     /* Footer */
     .footer {
-      margin: 10px auto 20px auto;
+      margin: 10px auto;
       padding: 15px;
       background: rgba(0, 0, 0, 0.8);
       font-size: 14px;
-      max-width: 600px;
+      max-width: 90%;
       border-radius: 10px;
     }
 
@@ -146,18 +144,29 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* Mobile Optimization */
+    @media screen and (max-width: 768px) {
+      .container, .contact, .footer {
+        max-width: 95%;
+      }
+      
+      .slides {
+        max-height: 300px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Running Small Header -->
+  <!-- Running Header -->
   <div class="running-header">
     <span>
       🚀 Our official DEMO website is now live! 🎉 This is just a test of the domain setup—our fully functional website is under development. Stay tuned for updates! 🚀
     </span>
   </div>
 
-  <!-- Main Content Container -->
+  <!-- Main Content -->
   <div class="container">
     <h1>Miniland Academy - Demo Website</h1>
     <h2>Image Showcase</h2>
@@ -173,7 +182,7 @@
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <!-- Dots for Slide Navigation -->
+    <!-- Dots -->
     <div class="dots">
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
@@ -182,30 +191,24 @@
     </div>
   </div>
 
-  <!-- Contact & Location Section -->
+  <!-- Contact Section -->
   <div class="contact">
     <h2>📍 Contact Miniland Academy</h2>
     <p>For admissions, inquiries, or urgent school visits, reach out to us:</p>
     <p><strong>📍 Address:</strong> Q94H+4G3, Dharan - Kerabari Rd, Kerabari 56600, Nepal</p>
     <p><strong>📞 Phone:</strong> +977 9826355288</p>
-    <p>
-      <strong>✉️ Email:</strong>
-      <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a>
-    </p>
-    <p>
-      <strong>💬 WhatsApp:</strong>
-      <a href="https://wa.me/977986302747" target="_blank">Chat Now</a>
-    </p>
-    <!-- Google Maps Embed -->
-    <div style="margin-top: 20px; border-radius: 10px; overflow: hidden;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa!4v1740477193555!5m2!1sen!2sqa" width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p><strong>✉️ Email:</strong> <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></p>
+    <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/977986302747" target="_blank">Chat Now</a></p>
+
+    <!-- Google Map -->
+    <div style="margin-top: 20px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.6584822007426!2d87.37623627443504!3d26.755272366840604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2sqa!4v1740477193555!5m2!1sen!2sqa" width="100%" height="350" style="border:0;" allowfullscreen></iframe>
     </div>
   </div>
 
   <!-- Footer -->
   <div class="footer">
-    &copy; 2025 Miniland Academy | Developed by
-    <a href="https://ramanbhandari.com.np" target="_blank">Raman Bhandari</a>
+    &copy; 2025 Miniland Academy | Developed by <a href="https://ramanbhandari.com.np" target="_blank">Raman Bhandari</a>
   </div>
 
   <script>
@@ -213,37 +216,13 @@
     showSlides();
 
     function showSlides() {
-      let slides = document.getElementsByClassName("slides");
-      let dots = document.getElementsByClassName("dot");
-
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-
-      slides[slideIndex - 1].style.display = "block";
-
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].classList.remove("active");
-      }
-
-      dots[slideIndex - 1].classList.add("active");
-      setTimeout(showSlides, 5000); // 5 seconds per slide
-    }
-
-    function plusSlides(n) {
-      slideIndex += n - 1;
-      showSlides();
-    }
-
-    function currentSlide(n) {
-      slideIndex = n - 1;
-      showSlides();
+      let slides = document.querySelectorAll(".slides");
+      slides.forEach(slide => slide.style.display = "none");
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].style.display = "block";
+      setTimeout(showSlides, 5000);
     }
   </script>
+
 </body>
 </html>
