@@ -9,8 +9,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
-            background: url('Assets/hero.jpeg') no-repeat center center fixed;
-            background-size: cover;
+            background: #000;
             color: white;
         }
 
@@ -47,7 +46,7 @@
             border-radius: 10px;
             max-width: 600px;
             margin: auto;
-            margin-top: 60px; /* To avoid overlap with running text */
+            margin-top: 60px;
         }
 
         h1 {
@@ -133,6 +132,7 @@
         <h1>Miniland Academy - Image Showcase</h1>
         
         <div class="slideshow-container">
+            <img class="slides" src="Assets/hero.jpeg" alt="Hero Image">
             <img class="slides" src="Assets/img (1).jpeg" alt="Image 1">
             <img class="slides" src="Assets/img (2).jpeg" alt="Image 2">
             <img class="slides" src="Assets/img (3).jpeg" alt="Image 3">
@@ -149,6 +149,7 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
             <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
         </div>
     </div>
 
